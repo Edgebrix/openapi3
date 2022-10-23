@@ -10,7 +10,7 @@ class ExternalDocumentation(ObjectBase):
     """
 
     __slots__ = ["description", "url"]
-    required_fields = "url"
+    required_fields = ["url"]
 
     def _parse_data(self):
         self.description = self._get("description", str)
