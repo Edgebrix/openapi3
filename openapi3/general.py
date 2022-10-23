@@ -9,7 +9,7 @@ class ExternalDocumentation(ObjectBase):
     .. _External Documentation Object: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md#externalDocumentationObject
     """
 
-    __slos__ = ["description", "url"]
+    __slots__ = ["description", "url"]
     required_fields = "url"
 
     def _parse_data(self):
