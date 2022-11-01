@@ -344,9 +344,9 @@ class ObjectBase(object):
                 # ignore spec extensions
                 continue
 
-            if not cls.key_contained(key, cls.__slots__):
-                # it has something we don't - probably not a match
-                return False
+            # if not cls.key_contained(key, cls.__slots__):
+            #     # it has something we don't - probably not a match
+            #     return False
 
         # then, ensure that all required fields are present
         for key in cls.required_fields:
