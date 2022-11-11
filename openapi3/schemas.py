@@ -311,7 +311,7 @@ class Model:
 
     def __iter__(self):
         for s in self.__slots__:
-            if s.startswith("_"):
+            if s.startswith("_") or getattr(self, s) is None:
                 continue
             yield s, getattr(self, s)
         return
