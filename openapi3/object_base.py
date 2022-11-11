@@ -152,7 +152,7 @@ class ObjectBase(object):
 
         Allows pickling objects by returning a dict of all slotted values.
         """
-        return _asdict({k: getattr(self, k) for k in type(self).__slots__ if hasattr(self, k)})
+        return _asdict({k: getattr(self, k) for k in type(self).__slots__ if hasattr(self, k) and getattr(self,k) is not None})
 
     def __setstate__(self, state):
         """
