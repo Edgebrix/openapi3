@@ -15,7 +15,7 @@ def _asdict(x):
     if hasattr(x, "__getstate__"):
         return x.__getstate__()
     elif isinstance(x, dict):
-        return {k: _asdict({k: val for k, val in v.items() if val is not None}) for k, v in x.items()}
+        return {k: _asdict(v) for k, v in x.items() if v is not None}
     elif isinstance(x, (list, tuple, set)):
         return x.__class__(_asdict(y) for y in x)
     else:
